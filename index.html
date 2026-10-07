@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CommentCart: read the crowd, not the scroll</title>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav><div class="wrap"><b>CommentCart</b><a href="#try">Try it</a><a href="#method">Method</a><a href="#data">Data</a><a href="#people">People</a><a href="#process">Process</a><a href="#limits">Limits</a></div></nav>
+<div class="wrap">
+<div class="hero">
+<h1>Read the crowd, <mark>not the scroll.</mark></h1>
+<p>Paste the comments under any product post. CommentCart removes the noise, keeps the real experiences, and shows what people love, what they complain about and what they say to buy instead.</p>
+</div>
+
+<div class="tool" id="try">
+<header><span>Analyse a product's comments</span><span id="engine">Engine: offline rules (Claude is used automatically inside claude.ai)</span></header>
+<div class="in">
+<div>
+<label for="pname">1. Product name</label>
+<input id="pname" placeholder="e.g. boAt Airdopes 141" autocomplete="off">
+<p class="hint" id="linkhint">Type a name to get search links for each platform.</p>
+<div class="links" id="links" style="margin-top:10px"></div>
+<p class="hint">Open a post, copy the comments, paste them on the right. CommentCart does not scrape sites, so it only reads what you paste.</p>
+</div>
+<div>
+<label for="cm">2. Paste comments (one per line, 10 or more works best)</label>
+<textarea id="cm" placeholder="Paste comments from Instagram, YouTube, TikTok or Reddit here"></textarea>
+<div class="row"><button class="p" id="go">Analyse comments</button><button id="demo">Load sample comments</button><span class="hint" id="msg" role="status"></span></div>
+</div>
+</div>
+<div id="out">
+<div class="stats" id="stats"></div>
+<div class="bar" id="pbar" role="group" aria-label="View as"><b>View as</b>
+<button data-p="researcher" aria-pressed="true">Researcher</button><button data-p="shopper" aria-pressed="false">Social shopper</button><button data-p="skeptic" aria-pressed="false">Skeptic</button>
+<span style="margin-left:auto"><button id="exp">Save insights (.md)</button></span></div>
+<div class="verdict" id="verdict"></div>
+<div class="cols" id="cols"></div>
+<div class="bar"><b>Original comments</b><span id="tnote">Every comment stays visible and tagged. Tap a complaint theme above to find it here.</span></div>
+<div class="feed" id="feed" tabindex="0" aria-label="Original comments"></div>
+</div>
+</div>
+</div>
+
+<div class="wrap">
+<section class="sec" id="method">
+<h2>What is netnography?</h2>
+<p class="sub">Understanding people through their online interactions. It is a qualitative method that studies how people communicate, behave, share opinions and make decisions in online communities.</p>
+<table><thead><tr><th>Traditional research</th><th>Netnography</th></tr></thead><tbody>
+<tr><td>Researcher asks questions</td><td>Researcher observes conversations</td></tr>
+<tr><td>Surveys and interviews</td><td>Comments and online discussions</td></tr>
+<tr><td>Responses are usually prompted</td><td>Interactions occur naturally</td></tr>
+<tr><td>Individual opinions</td><td>Community behaviour and culture</td></tr>
+<tr><td>Offline or controlled setting</td><td>Digital environment</td></tr></tbody></table>
+<h3 style="margin:36px 0 12px">In our topic, comment sections are informal product-research communities</h3>
+<div class="g3">
+<div><h3>Discover</h3><p>Users see a product through Instagram, YouTube, TikTok or influencer content.</p><p><mark>"Is it actually good?"</mark></p></div>
+<div><h3>Question</h3><p>They move to comments to ask about price, quality, link, size and real experience.</p><p><mark>"Anyone tried this?"</mark></p></div>
+<div><h3>Decide</h3><p>They compare opinions, warnings and recommendations before buying.</p><p><mark>"Any cheaper alternative?"</mark></p></div></div>
+<h3 style="margin:36px 0 12px">Why we use it</h3>
+<div class="g3"><div><p><b>Understand behaviour.</b> How users research products online.</p><p><b>Find needs.</b> What information users actively seek.</p></div>
+<div><p><b>Identify pain points.</b> Where scrolling, noise and uncertainty occur.</p><p><b>Understand trust.</b> What makes a comment feel credible.</p></div>
+<div><p><b>Generate insights.</b> Turn repeated patterns into user-centred requirements.</p></div></div>
+</section>
+
+<section class="sec" id="data">
+<h2>Data collection and analysis</h2>
+<p class="sub">Public, naturally occurring product conversations on Instagram, YouTube, TikTok and Reddit.</p>
+<table><thead><tr><th>Observed content</th><th>Example</th><th>What it may reveal</th></tr></thead><tbody>
+<tr><td>Questions</td><td>"Where can I buy this?"</td><td>Access, discovery</td></tr>
+<tr><td>Experiences</td><td>"Used it for 6 months."</td><td>Real-world use</td></tr>
+<tr><td>Complaints</td><td>"Quality is not good."</td><td>Pain points, risks</td></tr>
+<tr><td>Comparisons</td><td>"Better than X."</td><td>Evaluation criteria</td></tr>
+<tr><td>Recommendations</td><td>"Try this instead."</td><td>Community influence</td></tr>
+<tr><td>Warnings</td><td>"Don't waste your money."</td><td>Trust and risk signals</td></tr></tbody></table>
+<h3 style="margin:36px 0 12px">From scattered comments to patterns</h3>
+<ol class="flow"><li><b>Collect</b>Public comments</li><li><b>Code</b>Tag each comment</li><li><b>Group</b>Cluster into themes</li><li><b>Interpret</b>Read the patterns</li><li><b>Insight</b>Design requirement</li></ol>
+<table style="margin-top:18px"><thead><tr><th>Comment pattern</th><th>Category</th><th>Design insight</th></tr></thead><tbody>
+<tr><td>"Link?"</td><td>Accessibility</td><td>Make the purchase path easy to find</td></tr>
+<tr><td>"Worth ₹X?"</td><td>Value</td><td>Show price and value context</td></tr>
+<tr><td>"Anyone used it?"</td><td>Trust</td><td>Surface genuine experiences</td></tr>
+<tr><td>"Don't buy it."</td><td>Risk</td><td>Highlight recurring complaints</td></tr>
+<tr><td>"Alternative?"</td><td>Comparison</td><td>Provide comparable options</td></tr></tbody></table>
+<p class="pain"><b>Key insight.</b> The value is not in having more reviews. It is in finding the collective experience: 500+ messy comments become structured knowledge (what users love, common complaints, real experiences, alternatives, long-term feedback, trust signals).</p>
+</section>
+
+<section class="sec" id="people">
+<h2>The people we designed for</h2>
+<p class="sub">Persona: the social media product researcher, the Social Shopper.</p>
+<div class="emp"><div><b>Sees</b>Sponsored posts, trending products</div><div><b>Says</b>"Is this actually good?" "Anyone tried it?"</div><div><b>Thinks</b>"Can I trust this?" "Is it worth my money?"</div><div><b>Feels</b>Curious, excited, confused, skeptical</div></div>
+<h3 style="margin:36px 0 12px">Customer journey</h3>
+<ol class="flow"><li><b>1. Discover</b>Interested</li><li><b>2. Curiosity</b>Wants proof</li><li><b>3. Research</b>Opens comments</li><li><b>4. Explore</b>Scrolls a lot</li><li><b>5. Evaluate</b>Confused</li><li><b>6. Decide</b>Uncertain</li></ol>
+<p class="pain"><b>Major pain point: research.</b> Users must manually find genuine experiences inside repetitive, unstructured comments.</p>
+<h3 style="margin:36px 0 12px">Three user types seen in the comments</h3>
+<div class="g3">
+<div><h3>The Researcher</h3><p><i>"I will research before buying."</i></p><p><b>Needs:</b> evidence, comparison, long-term use.</p><p><b>Pain:</b> too much information.</p></div>
+<div><h3>The Social Shopper</h3><p><i>"I saw it and want it now."</i></p><p><b>Needs:</b> quick validation, price, link.</p><p><b>Pain:</b> important info is scattered.</p></div>
+<div><h3>The Skeptic</h3><p><i>"Can I trust the hype?"</i></p><p><b>Needs:</b> independent experiences, negatives.</p><p><b>Pain:</b> hard to separate hype from reality.</p></div></div>
+<p class="hint">The "View as" switch in the tool above reorders results for each of these three people.</p>
+</section>
+
+<section class="sec" id="process">
+<h2>How it fits Design Thinking</h2>
+<p class="sub">Netnography feeds the human-centred design cycle: observe first, design second.</p>
+<ol class="flow"><li><b>Empathize</b>Observe comments and behaviour</li><li><b>Define</b>Frame the real information problem</li><li><b>Ideate</b>Categorise, summarise, compare</li><li><b>Prototype</b>Build the CommentCart interface</li><li><b>Test</b>Compare raw comments vs insights</li></ol>
+<p class="pain" style="border-color:var(--acc)"><b>Problem statement.</b> Consumers struggle to extract trustworthy, useful product information from fragmented social-media conversations.</p>
+<h3 style="margin:36px 0 12px">Core idea</h3>
+<p style="max-width:60ch;margin:0">Turn messy conversation into structured community knowledge, without losing the human experiences behind it. That is why the original comments stay visible next to every insight.</p>
+</section>
+
+<section class="sec" id="limits">
+<h2>Benefits and honest limits</h2>
+<div class="g2" style="margin-top:20px">
+<div><h3>Benefits</h3><ul style="padding-left:18px"><li>Natural behaviour: what users really say and do</li><li>Authentic insight: spontaneous experiences</li><li>Community view: collective patterns, not isolated answers</li><li>Hidden needs: problems users never state directly</li><li>Trend awareness: changing concerns and preferences</li><li>Evidence-based design: observations tied to decisions</li></ul></div>
+<div><h3>Limits, and what the app does about them</h3><ul style="padding-left:18px"><li><b>Data overload:</b> groups comments into themes</li><li><b>Noise:</b> spam and emoji-only comments are hidden from insights</li><li><b>Fake or promotional content:</b> flagged, never counted as experience</li><li><b>Context loss:</b> originals always shown beside the summary</li><li><b>Platform limits:</b> you paste what you can see; nothing is scraped</li><li><b>Representation bias:</b> comments are one slice of buyers, so treat verdicts as a signal</li></ul></div></div>
+<p class="pain" style="border-color:var(--good)"><b>Conclusion.</b> Social-media comments are more than reactions. They contain experiences, recommendations, warnings, questions and trust signals. The opportunity is not more reviews, it is making community knowledge usable.</p>
+</section>
+</div>
+<footer><div class="wrap">CommentCart · Design Thinking (MDM 15), FA2 prototype · Roshani Endole, Tanmay Rane, Tanishka Nikam, Arnav Badhan · PCCoE, Pune</div></footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
